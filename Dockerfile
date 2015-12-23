@@ -6,6 +6,7 @@ RUN wget --no-verbose -O /tmp/apache-maven-${MAVEN_VERSION}.tar.gz http://mirror
  tar xzf /tmp/apache-maven-${MAVEN_VERSION}.tar.gz -C /opt/ && ln -s /opt/apache-maven-${MAVEN_VERSION} /opt/maven && ln -s /opt/maven/bin/mvn /usr/local/bin && rm -f /tmp/apache-maven-${MAVEN_VERSION}.tar.gz && \
  export MAVEN_HOME=/opt/maven && export PATH=$PATH:$MAVEN_HOME/bin
 
+RUN ls -al
 RUN mvn clean install
 
 RUN cp -f target/caas-test.war /data/tomcat/webapps/
