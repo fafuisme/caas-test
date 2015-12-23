@@ -1,4 +1,4 @@
-FROM index.alauda.cn/guuuo/javaweb
+FROM guuuo/javaweb
 
 MAINTAINER Fred Fu (fangyu.fu@ele.me)
 ENV MAVEN_VERSION 3.3.9
