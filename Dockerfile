@@ -8,5 +8,5 @@ RUN wget --no-verbose -O /tmp/apache-maven-${MAVEN_VERSION}.tar.gz http://mirror
 ADD . /webapp/
 
 RUN cd /webapp &&  mvn clean package && cp -f target/caas-test.war /data/tomcat/webapps/
-
+sed -i -e 's/\r$//g' /data/tomcat/bin/supervisord_tomcat.sh
 EXPOSE 8080
